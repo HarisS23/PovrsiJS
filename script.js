@@ -11,6 +11,8 @@
     const elipsoid = document.getElementById("elipsoid");
     const konus = document.getElementById("konus");
     const cilindar = document.getElementById("cilindar");
+    const restart = document.getElementById("restartBtn");
+    const dontClick = document.getElementById("dontClickBtn");
 
     function changePlanetShape(shape) {
       let computedStyles = getComputedStyle(shape);
@@ -32,8 +34,8 @@
     const centerX = screenWidth / 2;
     const centerY = screenHeight / 2;
 
-    const orbitRadiusX = screenWidth / 3;
-    const orbitRadiusY = screenHeight / 6;
+    let orbitRadiusX = screenWidth / 3;
+    let orbitRadiusY = screenHeight / 6;
 
     function createStars() {
       for (let i = 0; i < 100; i++) {
@@ -115,6 +117,36 @@
 
       planet.style.width = `${newWidth}px`;
       planet.style.height = `${newHeight}px`;
+    });
+
+    restart.addEventListener('click', () => {
+      location.reload();
+    });
+
+    let isDisappearing = false; 
+
+    dontClick.addEventListener('click', () => {
+      if (!isDisappearing) {
+        isDisappearing = true; 
+
+        const disappearInterval = setInterval(() => {
+          const randomNum = Math.random() * 0.1 + 1.01; 
+          orbitRadiusX *= randomNum;
+          orbitRadiusY *= randomNum;
+
+          baseSpeed += 0.002; 
+
+          const xPos = centerX + orbitRadiusX * Math.cos(angle);
+          const yPos = centerY + orbitRadiusY * Math.sin(angle);
+
+          if (xPos < -1000 || xPos > screenWidth + 1000 || yPos < -1000 || yPos > screenHeight + 1000) {
+            clearInterval(disappearInterval); 
+            planet.style.display = 'none'; 
+            shadow.style.display = 'none'; 
+            isDisappearing = false; 
+          }
+        }, 50); 
+      }
     });
 
     update();

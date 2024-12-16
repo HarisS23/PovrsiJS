@@ -151,3 +151,15 @@ body {
   button:hover {
     background-color: #555;
   }
+
+  #dontClickBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  #restartBtn{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
