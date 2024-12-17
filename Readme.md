@@ -15,7 +15,7 @@ A fun web app where you can interact with a planet, control its orbit, and watch
 1. Clone the repo:
    git clone https://github.com/HarisS23/RotationHub.git
 
-2. Open index.html in your browser.
+2. Open index.html in your browser, or run command node server.js in project folder.
 
 3. Use the buttons to control the planet's orbit, shape, size, and speed.
 
