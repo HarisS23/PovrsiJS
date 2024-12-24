@@ -13,6 +13,7 @@
     const cilindar = document.getElementById("cilindar");
     const restart = document.getElementById("restartBtn");
     const dontClick = document.getElementById("dontClickBtn");
+    const startBtn = document.getElementById("startBtn");
 
     function changePlanetShape(shape) {
       let computedStyles = getComputedStyle(shape);
@@ -38,7 +39,7 @@
     let orbitRadiusY = screenHeight / 6;
 
     function createStars() {
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 300; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
         const x = Math.random() * screenWidth;
@@ -52,7 +53,7 @@
     createStars();
 
     let angle = 1;
-    let baseSpeed = 0.03; 
+    let baseSpeed = 0.02; 
     let direction = 1; 
 
     function update() {
@@ -149,4 +150,8 @@
       }
     });
 
-    update();
+    startBtn.addEventListener('click', () => {
+      document.getElementById("startMenu").style.display = 'none';
+      document.getElementById("wrapper").style.filter = 'blur(0px)'
+      update();
+    })

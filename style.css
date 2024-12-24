@@ -8,6 +8,19 @@ body {
     height: 100vh;
     flex-direction: column;
   }
+  
+  #wrapper{
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    filter: blur(5px);
+  }
 
   #screen {
     width: 80vw;
@@ -15,6 +28,33 @@ body {
     border: 3px solid #fff;
     position: relative;
     perspective: 1000px;
+  }
+
+  #startMenu{
+    position: fixed;
+    height: 20vh;
+    width: 40vh;
+    background-color: gray;
+    top: 25%;
+    border: 2px solid blue;
+    box-shadow: black;
+    z-index: 11;
+  }
+  #startMenu button{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+  }
+
+  #startMenu h3{
+    position: absolute;
+    display: inline;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    text-align: center;
+    left: 0;
+    right: 0;
   }
 
   #center-dot {
