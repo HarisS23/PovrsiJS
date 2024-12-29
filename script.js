@@ -152,6 +152,6 @@ dontClick.addEventListener('click', () => {
 
 startBtn.addEventListener('click', () => {
   document.getElementById("startMenu").style.display = 'none';
-  document.getElementById("wrapper").style.filter = 'blur(0px)'
+  document.getElementById("wrapper").style.filter = 'blur(0px)';
   update();
 })
