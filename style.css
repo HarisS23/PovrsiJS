@@ -1,165 +1,205 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-  }
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
 
-  #screen {
-    width: 80vw;
-    height: 80vh;
-    border: 3px solid #fff;
-    position: relative;
-    perspective: 1000px;
-  }
+#wrapper{
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  filter: blur(5px);
+}
 
-  #center-dot {
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    box-shadow: 0 0 10px yellow;
-  }
+#screen {
+  width: 80vw;
+  height: 80vh;
+  border: 3px solid #fff;
+  position: relative;
+  perspective: 1000px;
+}
 
-  #planet {
-    border-radius: 50%;
-    position: absolute;
-    z-index: 10;
-  }
+#startMenu{
+  position: fixed;
+  height: 20vh;
+  width: 40vh;
+  background-color: gray;
+  top: 25%;
+  border: 2px solid blue;
+  box-shadow: black;
+  z-index: 11;
+}
+#startMenu button{
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+}
 
-  #shadow {
-    width: 250px;  
-    height: 40px; 
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), transparent);
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-    transform: translateY(15px);
-  }
+#startMenu h3{
+  position: absolute;
+  display: inline;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
 
-  #shapes {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 160px;
-  }
+#center-dot {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  box-shadow: 0 0 10px yellow;
+}
 
-  #sfera, #elipsoid, #konus, #cilindar, #paraboloid {
-    position: relative;
-    margin: 20px;
-    z-index: 10;
-  }
+#planet {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+}
 
-  #sfera, #elipsoid, #konus, #cilindar, #paraboloid:hover{
-    cursor: pointer;
-  }
+#shadow {
+  width: 250px;  
+  height: 40px; 
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), transparent);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(15px);
+}
 
-  #sfera {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; 
-    background: radial-gradient(
-      circle at 35% 45%, 
-      #0066ff ,      
-      #0044cc 30%,  
-      #002299 60%,  
-      #000033 90%,  
-      #000725 100%  
-      );
-    border-radius: 50%;
-    z-index: 10;
-    box-shadow: 
-    0 0 7px rgba(7, 85, 255, 0.4), 
-    0 0 10px rgba(38, 106, 253, 0.2), 
-    0 0 13px rgba(38, 106, 253, 0.1);
-  }
+#shapes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 160px;
+}
 
-  #elipsoid {
-    width: 110px;
-    height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle at 35% 45%, 
-      #0066ff ,      
-      #0044cc 30%,  
-      #002299 60%,  
-      #000033 90%,  
-      #000725 100%  
-      );
-    border-radius: 50%;
-    z-index: 10;
-    box-shadow: 
-    0 0 7px rgba(7, 85, 255, 0.4),
-    0 0 10px rgba(38, 106, 253, 0.2),
-    0 0 13px rgba(38, 106, 253, 0.1); 
-  }
+#sfera, #elipsoid, #konus, #cilindar, #paraboloid {
+  position: relative;
+  margin: 20px;
+  z-index: 10;
+}
 
-  #konus {
-    width: 150px; 
-    height: 100px;
-    background: rgb(0, 28, 185) linear-gradient(to left, rgba(5, 0, 27, 0.822), rgba(0, 94, 218, 0.788));
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
-    position: relative; 
-    border-radius: 50%;
-  }
+#sfera, #elipsoid, #konus, #cilindar, #paraboloid:hover{
+  cursor: pointer;
+}
 
-  #cilindar {
-    width: 60px; 
-    height: 100px; 
-    border-radius: 100% / 16%; 
-    background: 
-      radial-gradient(50% 8% at 50% 8%, rgba(0, 0, 0, 0.219) 99.99%, transparent 0), 
-      rgb(0, 28, 185) linear-gradient(to left, rgba(19, 0, 102, 0.479), rgb(0, 71, 165));
-  }
+#sfera {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  background: radial-gradient(
+    circle at 35% 45%, 
+    #0066ff ,      
+    #0044cc 30%,  
+    #002299 60%,  
+    #000033 90%,  
+    #000725 100%  
+    );
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 
+  0 0 7px rgba(7, 85, 255, 0.4), 
+  0 0 10px rgba(38, 106, 253, 0.2), 
+  0 0 13px rgba(38, 106, 253, 0.1);
+}
 
-  .star {
-    width: 3px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-  }
+#elipsoid {
+  width: 110px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 45%, 
+    #0066ff ,      
+    #0044cc 30%,  
+    #002299 60%,  
+    #000033 90%,  
+    #000725 100%  
+    );
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 
+  0 0 7px rgba(7, 85, 255, 0.4),
+  0 0 10px rgba(38, 106, 253, 0.2),
+  0 0 13px rgba(38, 106, 253, 0.1); 
+}
 
-  button {
-    padding: 10px;
-    background-color: #333;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-top: 2px;
-    display: inline;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 15;
-  }
-  #buttons{
-    display: flex;
-    flex-wrap: wrap;
-  }
+#konus {
+  width: 150px; 
+  height: 100px;
+  background: rgb(0, 28, 185) linear-gradient(to left, rgba(5, 0, 27, 0.822), rgba(0, 94, 218, 0.788));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 
+  position: relative; 
+  border-radius: 50%;
+}
 
-  button:hover {
-    background-color: #555;
-  }
+#cilindar {
+  width: 60px; 
+  height: 100px; 
+  border-radius: 100% / 16%; 
+  background: 
+    radial-gradient(50% 8% at 50% 8%, rgba(0, 0, 0, 0.219) 99.99%, transparent 0), 
+    rgb(0, 28, 185) linear-gradient(to left, rgba(19, 0, 102, 0.479), rgb(0, 71, 165));
+}
 
-  #dontClickBtn{
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+.star {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
 
-  #restartBtn{
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+button {
+  padding: 10px;
+  background-color: #333;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 2px;
+  display: inline;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 15;
+}
+#buttons{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#dontClickBtn{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#restartBtn{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
