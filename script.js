@@ -71,9 +71,6 @@ function update() {
   planet.style.left = `${xPos - planet.offsetWidth / 2}px`;
   planet.style.top = `${yPos - planet.offsetHeight / 2}px`;
   planet.style.transform = `scaleX(${scaleX}) scaleY(${scaleY})`;
-
-  shadow.style.left = `${xPos - shadow.offsetWidth / 2}px`;
-  shadow.style.top = `${yPos + planet.offsetHeight / 2}px`;
   
   angle += baseSpeed * speedFactor * direction; 
 
