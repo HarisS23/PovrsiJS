@@ -66,7 +66,7 @@ function update() {
   const scaleX = scaleFactor; 
   const scaleY = scaleFactor; 
 
-  const speedFactor = scaleX; 
+  const speedFactor = scaleFactor; 
 
   planet.style.left = `${xPos - planet.offsetWidth / 2}px`;
   planet.style.top = `${yPos - planet.offsetHeight / 2}px`;
